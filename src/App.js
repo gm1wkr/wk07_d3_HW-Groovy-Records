@@ -1,24 +1,18 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import ChartContainer from './containers/ChartContainer';
+import GenreContainer from './containers/GenreContainer';
+
 
 function App() {
   return (
+  <>
+    <h1>PopPickers - Chart Top 20</h1>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ChartContainer />
+      <GenreContainer />
     </div>
+  </>
   );
 }
 
