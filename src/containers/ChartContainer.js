@@ -23,14 +23,14 @@ const ChartContainer = () => {
     return(
         <>
             
-            <section className="chart-container">
-                <div className="chart-list">
+            <div className="chart-container">
+                <section className="chart-list">
                     <ChartList charts={charts} onTitleClick={setSelectedTitle} />
-                </div>
-                <div className="chart-details">
+                </section>
+                <section className="chart-details">
                     <TitleDetails title={selectedTitle} />
-                </div>
-            </section>
+                </section>
+            </div>
         </>
     )
 

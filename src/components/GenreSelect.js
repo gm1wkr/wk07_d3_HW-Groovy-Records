@@ -5,7 +5,6 @@ const GenreSelect = ({ genres, onGenreSelected }) => {
     const handleSelectChange = (event) => {
         const selectedGenre = event.target.value;
         onGenreSelected(selectedGenre);
-        console.log(selectedGenre);
     }
 
 

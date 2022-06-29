@@ -14,16 +14,21 @@ const GenreContainer = () => {
 
     const [genreCharts, setGenreCharts] = useState([]);
     const [genreURL, setGenreURL] = useState(genreURLs);
-    const [selectedGenre, setSelectedGenre] = useState(null);
+    const [selectedGenre, setSelectedGenre] = useState('All');
 
-    console.log(selectedGenre);
+    console.log(`selectedGenre ${selectedGenre}`);
+
+    // useEffect( () => {
+    //     setSelectedGenre();
+    // }, [selectedGenre])
 
     useEffect(() => {
         getGenreCharts();
-    }, [])
+    }, [selectedGenre])
 
     const getGenreCharts = async function(){
-        const res = await fetch('https://itunes.apple.com/gb/rss/topsongs/limit=20/genre=6/json');
+        const genreLink = genreURLs.find(genre => genre.genreName === selectedGenre);
+        const res = await fetch(genreLink.url);
         const genreCharts = await res.json();
         setGenreCharts(genreCharts.feed.entry);
     }
