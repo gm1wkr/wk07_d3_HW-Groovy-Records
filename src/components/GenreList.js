@@ -1,8 +1,24 @@
 import React from "react";
+import GenreChartItem from "./GenreChartItem";
 
-const GenreList = () => {
+const GenreList = ({ genreCharts }) => {
+
+    const genreChartItems = genreCharts.map((chart, index) => {
+        const id = chart.id.attributes['im:id'];
+        chart['position'] = index + 1;
+        return (
+        <GenreChartItem chart={chart} key={id} />
+        )
+    });
+
+
     return (
-        <h2>Genre List</h2>
+        <div className="chartsList">
+            <h2>Genre List</h2>
+            <ul>
+                {genreChartItems}
+            </ul>
+        </div>
     );
 }
 
