@@ -5,10 +5,10 @@ const GenreChartItem = ({ chart }) => {
 
 
     return(
-        <li className="">
-            <b>{chart.position} </b> 
-            {titleParts[0]} 
-            <b>{titleParts[1]}</b> 
+        <li className="chart-item">
+            <p class="chart-position">{chart.position} </p> 
+            <p class="chart-title">{titleParts[0]} </p>
+            <p class="chart-artist">{titleParts[1]}</p> 
         </li>
     )
 }

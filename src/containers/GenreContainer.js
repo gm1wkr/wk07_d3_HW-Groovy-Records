@@ -36,9 +36,12 @@ const GenreContainer = () => {
     return(
         <>
             <section className="genre-container">
-                <h2>Genre Charts</h2>
-                <GenreSelect genres={genreURLs} onGenreSelected={setSelectedGenre} />
                 <GenreList genreCharts={genreCharts} />
+                <div>
+                    <h2>Genre Charts</h2>
+                <GenreSelect genres={genreURLs} onGenreSelected={setSelectedGenre} />
+                </div>
+                
             </section>
         
         </>

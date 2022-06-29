@@ -2,7 +2,13 @@ import React from "react";
 
 const TitleDetails = ( {title} ) => {
     if (title === null){
-        return null;
+        return(
+            <>
+            <h2>Top 20</h2>
+            <p>&lt;&lt;</p>
+            <p>Click a title to view details</p>
+            </>
+        );
     }
 
 
@@ -17,13 +23,19 @@ const TitleDetails = ( {title} ) => {
 
     return(
         <>
-            <h2>{titleParts[0]} <small>{titleParts[1]}</small> </h2>
-            {title.id.attributes['im:id']}
+            <h3>{titleParts[0]}</h3>
+            <h4>{titleParts[1]}</h4>
             <img src={imageURL} width={imageSize} height={imageSize} />
             
-            {category}
-            {releaseDate}
-            {storeLink}
+            <p class="title-category"><span>Category</span>{category}</p>
+            <p class="title-date"><span>Releas Date</span>{releaseDate}</p>
+            <p class="title-link">
+                <a href={storeLink}>
+                <div class="button">
+                <button class="button__button button-slide">Buy Now!</button>
+        </div>
+                </a>
+            </p>
         </>
     )
 }

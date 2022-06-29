@@ -1,0 +1,151 @@
+:root{
+    --background-gradient: linear-gradient(to right, 
+                rgba(255, 74, 0, 1), 
+                rgba(244, 122, 0, 1), 
+                rgb(30, 255, 0),
+                rgba(0, 227, 190, 1),
+                rgba(0, 46, 255, 1)
+    );
+    --background-gradient-reversed: linear-gradient(to left, 
+                rgba(255, 74, 0, 1), 
+                rgba(244, 122, 0, 1), 
+                rgb(30, 255, 0), 
+                rgba(0, 227, 190, 1), 
+                rgba(0, 46, 255, 1)
+    );
+    --accent:rgb(0, 98, 255);
+    --accent-secondary: rgb(162, 0, 255);
+    --accent-danger: #f20;
+
+
+    --text-shadow: 1px 1px 1px rgba(0,0,0,0.6), 0px 6px 4px rgba(0,0,0,0.3);
+
+    --box-shadow-20: -1px 2px 4px 2px rgba(0,0,0,0.4);
+
+    --box-shadow-50: -2px 1px 4px 2px rgba(0,0,0,0.6), 
+                  -2px 4px 12px 6px rgba(0,0,0,0.1);
+
+    --transition: all 0.2s ease-in-out;
+}
+
+
+
+.buttons__container,
+.buttons__container-dark{
+    width: 92vw;
+    margin: 6rem auto;
+    border: 1px solid #666;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+    gap: 4rem;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.buttons__container-dark{
+    background-color: #000;
+}
+
+.button__button {
+    /* height: 2rem; */
+    width: 100%;
+    border: 0;
+    padding: 0 1.4rem;
+    line-height: 2;
+    border: 1px solid transparent;
+    border-radius: 0.6rem;
+    box-shadow: var(--box-shadow-20);
+    transition: var(--transition);
+    color: #fff;
+    font-size: 1.4rem;
+    text-shadow: var(--text-shadow);
+}
+
+.button__button:hover{
+    box-shadow: var(--box-shadow-50);
+    color: #fff;
+    border: 1px solid #000;
+    transform: translateY(1px) scale(1.02);
+    filter: hue-rotate(-30deg) brightness(1.2) contrast(1.2);
+}
+
+.button-primary{
+    background-color: var(--accent);
+}
+
+.button-secondary{
+    background-color: var(--accent-secondary);
+}
+
+.button-danger{
+    background-color: var(--accent-danger);
+}
+
+.button-slide{
+    background-color: rgb(183, 73, 0);
+    position: relative;
+    overflow: hidden;
+}
+
+.button-slide::after {
+    transition: var(--transition);
+    content: 'OK, Deleting Universe';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #f40;
+    border-radius: inherit;
+    /* transform: translateX(-100%); */
+    transform: rotateX(90deg);
+    line-height: inherit;
+}
+
+/* .button-slide:hover.button-slide{
+    transform: rotateX(90deg);
+} */
+
+.button-slide:hover::after{
+    /* transform: translateX(0); */
+    transform: rotateX(0deg);
+}
+
+.button-gradient,
+.button-gradient-swap{
+    position: relative;
+    background: var(--background-gradient);
+    border: none
+}
+
+.button-gradient::before,
+.button-gradient-swap::before{
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background: var(--background-gradient);
+    border: none;
+    box-shadow: none;
+    transform: scale(1.06);
+    transition: var(--transition);
+    filter: blur(10px);
+    opacity: 0;
+}
+
+.button-gradient:hover::before,
+.button-gradient-swap:hover::before{
+    opacity: 1;
+}
+
+
+.button-gradient-swap::before{
+    background: var(--background-gradient-reversed);
+    transform: scale(1);
+    filter: blur(2px);
+}

@@ -17,7 +17,6 @@ const ChartList = ({ charts, onTitleClick }) => {
 
     return(
         <div className="chartsList">
-            <h2>chart List</h2>
             <ul>
                 {chartItems}
             </ul>

@@ -14,7 +14,6 @@ const GenreList = ({ genreCharts }) => {
 
     return (
         <div className="chartsList">
-            <h2>Genre List</h2>
             <ul>
                 {genreChartItems}
             </ul>

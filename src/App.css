@@ -1,6 +1,116 @@
-.chart-container{
-  max-width: 88vw;
+:root{
+  --background-grad: linear-gradient(to right, 
+    rgba(255, 74, 0, .6), 
+    rgba(244, 122, 0, .6), 
+    rgb(30, 255, 0, 0.3),
+    rgba(0, 227, 190, .6),
+    rgba(0, 46, 255, .6)
+  );
+
+  --background-gradient-left: linear-gradient(to left, 
+    rgba(255, 74, 0, .4), 
+    rgba(244, 122, 0, .4), 
+    rgb(30, 255, 0, 0.4),
+    rgba(0, 227, 190, .4),
+    rgba(0, 46, 255, .4)
+  );
+
+  --border: 1px solid rgba(0, 0, 0, 0.394);
+}
+
+
+body {
+  background-color: #000;
+}
+
+.App{
+  max-width: 1137px;; 
+  margin: 4rem auto;
+  padding: 0;
+  background: var(--background-grad);
+  color: #fff;
+  border: var(--border);
+}
+
+.header{
+  border-bottom: var(--border);
+  text-align: center;
+}
+
+
+
+.chart-container,
+.genre-container{
+  /* max-width: 88vw; */
   margin: auto;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  grid-template-columns: 3fr 1fr;
+  background-color: #00B3AC;
+  background: var(--background-gradient-left);
+  border-bottom: var(--border);
 }
+
+.genre-container {
+  background-color: #B33E00;
+}
+
+.chart-details {
+  height: min-content;
+  background-color: rgba(255, 255, 255, 0.141);
+  margin-top: 2rem;
+  margin-right: 2rem;
+  /* margin-bottom: 42rem; */
+  padding: 1rem;
+  border-radius: 1rem;
+  border: var(--border);
+}
+
+ul{
+  list-style: none;
+  margin: 2rem 2rem;
+  padding:0;
+  background-color: rgba(0, 0, 0, 0.42);
+  border: var(--border);
+}
+li{
+  text-align: left;
+  line-height: 1.6rem;
+  padding: 0.3rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.11);
+  transition: background .3s ease-in-out;
+}
+li:nth-child(odd){
+  background-color: rgba(255, 255, 255, 0.141);
+}
+
+li:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+li p{
+  color: #fff;
+  text-align: left;
+  margin:0;
+  padding: 0.4rem 0;
+}
+
+p.chart-position {
+  width: 2rem;
+  padding-right: 2rem;
+  font-size: 1.6rem;;
+}
+
+p.chart-title {
+  flex: 1 0 auto;
+  font-weight: bold;
+}
+
+p.chart-artist {
+  flex: 1 0 auto;
+  text-align: right;
+}
+

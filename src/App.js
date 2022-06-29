@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import './mike.css';
 import Header from './components/Header';
 import ChartContainer from './containers/ChartContainer';
 import GenreContainer from './containers/GenreContainer';
