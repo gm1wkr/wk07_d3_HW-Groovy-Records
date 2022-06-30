@@ -11,7 +11,7 @@ function App() {
   <>
     
     <div className="App">
-      <Header headerText="PopPickers Smash Hits" />
+      <Header headerText="Groovy Records Inc." />
       <ChartContainer />
       <GenreContainer />
     </div>

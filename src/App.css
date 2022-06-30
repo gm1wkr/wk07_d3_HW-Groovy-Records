@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,100&display=swap');
+
+
 :root{
   --background-grad: linear-gradient(to right, 
     rgba(255, 74, 0, .6), 
@@ -16,6 +19,8 @@
   );
 
   --border: 1px solid rgba(0, 0, 0, 0.394);
+  --text-shadow: 1px 1px 1px rgba(0,0,0,0.6), 0px 6px 4px rgba(0,0,0,0.3);
+
 }
 
 
@@ -35,8 +40,20 @@ body {
 .header{
   border-bottom: var(--border);
   text-align: center;
+  height: 6rem;
 }
-
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Acme', sans-serif;
+  text-shadow: var(--text-shadow);
+}
+h1{
+  margin:0;
+  padding:0;
+  font-size: 3rem;
+}
 
 
 .chart-container,
